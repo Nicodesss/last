@@ -1,4 +1,4 @@
-package com.grouph.flightairlineapi.collection;
+package com.example.demo.collection;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Builder;
@@ -6,6 +6,7 @@ import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.DocumentReference;
+
 
 import java.util.List;
 
@@ -16,28 +17,22 @@ import java.util.List;
 public class Flight {
 
     @Id
-    private String flight_ID;
-    private String departure_airport;
-    private String destination_airport;
-    private String departure_date;
-    private String departure_time;
-    private String arrival_time;
-    private String return_date;
-    private String flight_duration;
-    private String delay_time;
+    private String flightId;
+    private String departureAirport;
+    private String destinationAirport;
+    private String departureDate;
+    private String departureTime;
+    private String arrivalTime;
+    private String returnDate;
+    private String flightDuration;
+    private String delayTime;
     private Boolean cancelled;
     private Boolean isFinished;
-    private Boolean isMoved;
-    private int adult_passengers;
-    private int children_passengers;
-    private int infant_passengers;
-    private int available_seats;
-    private int occupied_seats;
-    private int economy_class_price;
-    private int business_class_price;
-    private int first_class_price;
 
-//    private List<Review> reviewId;
-    @DocumentReference
+    private List<PassengersMap> passengersMaps;
+
+
     private List<Moved> ifMoved;
+
+    private List<Cost> cost;
 }
